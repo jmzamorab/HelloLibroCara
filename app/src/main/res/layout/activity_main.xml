@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+
+    android:orientation="vertical"
+
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/elTextoDeBienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola, bien venido" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="121dp"
+        facebook:com_facebook_confirm_logout="false"
+        facebook:com_facebook_tooltip_mode="never_display"
+        />
+
+    <Button
+        android:id="@+id/boton_hacerLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="boton_Login_pulsado"
+        android:text="Facebook login" />
+
+    <!-- boton de login de facebook -->
+    <!-- necesita (arriba):     xmlns:facebook="http://schemas.android.com/apk/res-auto" -->
+    <!--
+    Profile picture view-->
+    <com.facebook.login.widget.ProfilePictureView
+        android:id="@+id/profilePicture"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center_horizontal"
+        facebook:com_facebook_preset_size="normal"
+        android:layout_alignBottom="@+id/boton_hacerLogin"
+        android:layout_alignParentLeft="true" />
+
+
+    <Button
+        android:id="@+id/boton_LogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="boton_Logout_pulsado"
+        android:text="logout"/>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Qué estás pensando?"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        >
+
+        <EditText
+            android:id="@+id/txt_mensajeFB"
+            android:layout_width="196dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Compártelo aquí">
+        </EditText>
+
+        <Button
+            android:id="@+id/boton_EnviarAFB"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Compartir"
+            android:onClick="boton_enviarTextoAFB_pulsado"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/boton_EnviarFoto"
+        android:onClick="boton_EnviarFoto_pulsado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enviar foto" />
+
+</LinearLayout>
